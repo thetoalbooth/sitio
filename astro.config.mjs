@@ -12,4 +12,5 @@ export default defineConfig({
         }
     },
     site: 'https://thetoalbooth.github.io',
+    base: 'sitio'
 });
