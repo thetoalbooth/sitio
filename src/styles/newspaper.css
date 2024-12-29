@@ -1,0 +1,88 @@
+/* src/styles/newspaper.css */
+
+/* General body styles */
+body {
+    font-family: 'Computer Modern'; 
+    line-height: 1.75; 
+    margin: 0;
+    padding: 25px;
+    padding-top: 35px; /* Adjust this value based on your navbar height */
+    background-color: #C4AF9A; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+}
+
+/* Header styles */
+header {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.5em; /* Large title */
+    margin: 0;
+}
+
+header h2 {
+    font-size: 1.5em; /* Subtitle */
+    font-weight: normal;
+    color: #555; /* Slightly lighter color for subtitle */
+}
+
+/* Article styles */
+article {
+    margin-bottom: 20px; /* Space between articles */
+    padding: 15px;
+    background: background-color; /* White background for articles */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+article h3 {
+    font-size: 1.8em; /* Article title */
+    margin-top: 0; 
+}
+
+article p {
+    margin: 10px 0; /* Space between paragraphs */
+}
+
+/* MCQ Classes */
+.lst {
+    background-color: #C4AF9A;
+    padding: 25px;
+    padding-top: 0px;
+    line-height: 0.8;
+}
+
+.enumerate {
+    background-color: #C4AF9A ;
+    padding:25px;
+    padding-top: 0px;
+}
+
+
+/* Link styles */
+a {
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em; /* Smaller font for footer */
+    color: #777; /* Lighter color for footer text */   
+}
+
+/* Add this to style horizontal rules */
+hr {
+    border: none;
+    border-top:  double #333;
+    margin: 1em 0;
+    width: 100%;
+}

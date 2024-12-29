@@ -1,0 +1,77 @@
+---
+import '../styles/newspaper.css';
+import Navbar from '../components/Navbar.astro';
+
+// type declaration for latex rendering
+declare global {
+    interface Window {
+        renderMathInElement: (element: HTMLElement, options?: any) => void;
+    }
+}
+
+const { title } = Astro.props;
+const links =[
+	{href: '/about',text: 'about'},
+	{href: '/math', text: 'test'},
+	{href: '/FRQS/2024_frq_5/', text: 'FRQ'},
+	{href: '/geo_sequence', text: 'sequence'}
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+		<link rel="stylesheet" href="/styles/newspaper.css">
+		<link 
+			rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"/>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				window.renderMathInElement(document.body, {
+					delimiters: [
+						{left: "$$", right: "$$", display: true},
+						{left: "$", right: "$", display: false}
+					]
+				});
+			});
+		</script>
+		<style>
+			body {
+				padding-top: 70px;
+				margin: 0;
+				background-color: #C4AF9A;
+			}
+			.content {
+                padding: 1rem;
+            }
+            .container {
+                max-width: 1200px; /* Set a max width for the content */
+                margin: 0 auto; /* Center the container */
+                padding: 0 20px; /* Add some horizontal padding */
+            }
+		
+			
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<Navbar links={links} />
+			</header>
+			<main>
+				<div class="container">
+					<div class="content">
+						<slot />
+					</div>
+				</div>
+			</main>
+			<footer>
+				<p>&copy; 2023 Your Newspaper Name. All rights reserved.</p>
+			</footer>
+		</div>
+	</body>
+</html>
